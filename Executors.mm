@@ -12,7 +12,7 @@ namespace CppUtils {
                 });
         }
 
-        void ExecuteOnMainThread(std::function<void()> function) {
+        void ExecuteOnMainThread(std::function<void()> function, bool ensureAsync) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 function();
             });
